@@ -2,6 +2,7 @@
   "name": "asana-tools",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@types/jest": "^19.2.3",
     "@types/node": "^7.0.22",

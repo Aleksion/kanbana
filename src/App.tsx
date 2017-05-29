@@ -1,4 +1,4 @@
-import { flexBox } from "./Helpers/styles";
+import { flexBox } from "./Helpers/styles"
 import * as React from "react"
 import "./App.css"
 import { Client } from "asana"
@@ -6,6 +6,7 @@ import Login from "./Containers/Login"
 import Main from "./Containers/Main"
 import * as localForage from "localforage"
 import styled from "styled-components"
+import constants from "./constants"
 
 const OuterWrapper = styled.div`
   width: 100vw;
@@ -17,8 +18,8 @@ interface State {
 }
 class App extends React.Component<{}, State> {
   client = Client.create({
-    clientId: "351330568718362",
-    redirectUri: "http://localhost:3000/"
+    clientId: constants.asana.clientId,
+    redirectUri: constants.asana.redirectUri
   })
 
   constructor(props: any) {
