@@ -9,7 +9,7 @@ const LoginButton = styled.button`
     color: black;
     font-size: 30px;
     font-weight: bold;
-    border: none;
+    border: solid 1px;
 `
 
 interface Props {
@@ -17,5 +17,7 @@ interface Props {
 }
 
 export default (props: Props) => {
-    return <LoginButton onClick={props.onClick}> Login </LoginButton>
+    return (
+        <LoginButton onClick={props.onClick}> Login </LoginButton>
+    )
 }

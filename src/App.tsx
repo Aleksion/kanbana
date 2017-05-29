@@ -1,11 +1,17 @@
+import { flexBox } from "./Helpers/styles";
 import * as React from "react"
 import "./App.css"
 import { Client } from "asana"
 import Login from "./Containers/Login"
 import Main from "./Containers/Main"
+import * as localForage from "localforage"
+import styled from "styled-components"
 
-const logo = require("./logo.svg")
-
+const OuterWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  ${flexBox}
+`
 interface State {
   loggedIn: boolean
 }
@@ -17,6 +23,9 @@ class App extends React.Component<{}, State> {
 
   constructor(props: any) {
     super(props)
+
+    // Set config
+    localForage.config()
 
     this.state = {
       loggedIn: false
@@ -36,13 +45,9 @@ class App extends React.Component<{}, State> {
   render() {
 
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
+      <OuterWrapper>
         {this.renderMainContent()}
-      </div>
+      </OuterWrapper>
     )
   }
 }
