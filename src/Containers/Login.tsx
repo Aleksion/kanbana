@@ -25,7 +25,7 @@ export default class Login extends React.PureComponent<Props, {}> {
         // If our cache contains a token, we'll try to authenticate
         const cachedTokenResponse = await localForage.getItem<AccessTokenResponse>(TOKEN_RESPONSE_KEY)
 
-        if (!!cachedTokenResponse.access_token) {
+        if (!!cachedTokenResponse && !!cachedTokenResponse.access_token) {
             const promise = this.signin()
             console.log(cachedTokenResponse)
             promise.catch(() => localForage.removeItem(TOKEN_RESPONSE_KEY))

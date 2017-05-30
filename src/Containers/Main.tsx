@@ -1,12 +1,15 @@
-import styled from "styled-components"
+import * as Modal from "react-modal"
 import * as React from "react"
 
 import { Client, resources } from "asana"
-import { flexBox } from "../Helpers/styles"
+
+import MoveButton from "../Components/MoveButton"
 import { Observable } from "rxjs"
-import * as Modal from "react-modal"
-const Spinner = require("react-spinkit")
 import Section from "../Components/Section"
+import { flexBox } from "../Helpers/styles"
+import styled from "styled-components"
+
+const Spinner = require("react-spinkit")
 
 const Container = styled.div`
     background-color: yellow;
@@ -43,17 +46,6 @@ const MainContainer = styled.div`
 const SectionWrapper = styled.div`
     ${flexBox}
     overflow: y;
-`
-
-const MoveButton = styled.button`
-    width: 125px;
-    height: 75px;
-    background-color: teal;
-    color: black;
-    font-size: 30px;
-    font-weight: bold;
-    border: solid 1px;
-    background-color: ${(props) => props.disabled ? "grey" : "teal"};    
 `
 
 const CustomModal = styled(Modal) `
