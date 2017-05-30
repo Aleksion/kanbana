@@ -16,6 +16,7 @@ interface Props {
     onClick: () => void
 }
 
+
 export default (props: Props) => {
     return (
         <LoginButton onClick={props.onClick}> Login </LoginButton>
